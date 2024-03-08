@@ -44,7 +44,7 @@ urlpatterns = [
     path('transfer/', 'InfinityFinance.views.transfer', name='transfer')
     path('deposit/', 'InfinityFinance.views.deposit', name='deposit')
     path('withdraw/', 'InfinityFinance.views.withdraw', name='withdraw')
-    
+    path('register/', )
     path('account/<int:account_id>', account_details, name="account_details")
     
     # Add more URL patterns for other views as needed
