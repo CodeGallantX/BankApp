@@ -8,8 +8,9 @@ from.views import account_details
 
 
 # Create your views here.
-def home(request):
-    return render(request, 'homepage.html')
+
+def home_page(request):
+    return render(request, 'bank/homepage.html')
 
 
 def missing_404_page(request, exception):
