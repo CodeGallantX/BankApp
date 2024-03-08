@@ -14,5 +14,10 @@
 <p>User: {{ account.user.username }}</p>
 <p>Balance: ${{ account.balance }}</p>
 {% endblock %}
+
+<div class="btn-line">
+    <button><a href="{% url 'transfer' account.id %}">Transfer Funds</a></button>
+    <button><a href="{% url 'transaction_history' account.id %}">Transaction History</a></button>
+</div>
 </body>
 </html>
