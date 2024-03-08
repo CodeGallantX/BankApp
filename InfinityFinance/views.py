@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views import generic
 from django.urls import reverse_lazy
 from .models import Account
+from.views import account_details
 
 
 # Create your views here.
@@ -13,6 +14,11 @@ def home(request):
 
 def missing_404_page(request, exception):
     return render(request, '404.html', status=404)
+
+
+def account_details(request, account_id):
+    account = get_object_or_404(Account, id=account_id)
+    return render(request, 'bank/account.html', {'account': account})
 
 
 class CustomLoginView(LoginView):
@@ -25,8 +31,3 @@ class RegisterView(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/register.html'
-
-
-def account_details(request, account_id):
-    account = get_object_or_404(Account, id=account_id)
-    return render(request, 'bank/account.html', {'account': account})
