@@ -45,8 +45,8 @@ urlpatterns = [
     path('deposit/', 'InfinityFinance.views.deposit', name='deposit')
     path('withdraw/', 'InfinityFinance.views.withdraw', name='withdraw')
     path('register/', 'InfinityFinance.views.signup', name="signup"),
-    path('login/', 'InfinityFinance.views.
     path('account/<int:account_id>', account_details, name="account_details")
     
+}
     # Add more URL patterns for other views as needed
     handler404 = 'InfinityFinance.views.page_not_found'
