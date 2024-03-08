@@ -39,8 +39,12 @@ app_name = 'bank'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_page, name='home'),
-    path('', include('bank.urls')),
+    path('', 'InfinityFinance.views.home_page', name='home'),
+    path('account/', 'InfinityFinance.views.account', name='account'),
+    path('transfer/', 'InfinityFinance.views.transfer', name='transfer')
+    path('deposit/', 'InfinityFinance.views.deposit', name='deposit')
+    path('withdraw/', 'InfinityFinance.views.withdraw', name='withdraw')
+    
     path('account/<int:account_id>', account_details, name="account_details")
     
     # Add more URL patterns for other views as needed
