@@ -5,6 +5,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from .models import Account
 
+
 # Create your views here.
 def home(request):
     return render(request, 'homepage.html')
