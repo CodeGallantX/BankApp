@@ -33,12 +33,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404
-from . import views
+from .views import home_page, account_details
+
+app_name = 'bank'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('', include('bank.urls'))
+    path('', home_page, name='home'),
+    path('', include('bank.urls')),
+    path('account/<int:account_id>', account_details, name="account_details")
     
     # Add more URL patterns for other views as needed
 ]
