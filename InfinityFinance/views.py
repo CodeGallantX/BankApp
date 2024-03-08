@@ -13,7 +13,7 @@ def home_page(request):
     return render(request, 'bank/homepage.html')
 
 
-def missing_404_page(request, exception):
+def page_not_found(request, exception):
     return render(request, '404.html', status=404)
 
 
