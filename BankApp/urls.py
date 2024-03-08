@@ -33,8 +33,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404
-from  InfinityFinance import views
-from .views import home_page, account_details
 
 app_name = 'bank'
 
