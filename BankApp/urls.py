@@ -1,7 +1,6 @@
 from django.contrib import admin
-from django.urls import path, include
-from InfinityFinance.views import home_page
-from InfinityFinance import views as finance_views
+from django.urls import path
+from InfinityFinance.views import home_page, account_details
 
 app_name = 'bank'
 
