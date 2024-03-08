@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404
+from InfinityFinance.views import home_page, account_details
 
 app_name = 'bank'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', 'InfinityFinance.views.home_page', name='home'),
+    path('', 'InfinityFinance.views.home_page, name='home'),
     path('account/', 'InfinityFinance.views.account', name='account'),
     path('transfer/', 'InfinityFinance.views.transfer', name='transfer'),
     path('deposit/', 'InfinityFinance.views.deposit', name='deposit'),
