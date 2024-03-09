@@ -14,5 +14,4 @@ urlpatterns = [
     path('account/<int:account_id>/', infinity_views.account_details, name="account_details"),
 ]
 
-handler404 = 'InfinityFinance.views.page_not_found'
-
+handler404 = 'InfinityFinance.views.page_not_found'  # Correct the handler404 to use the correct module path
