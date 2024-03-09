@@ -1,15 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.conf import settings
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
 from django.views import generic
 from django.urls import reverse_lazy
+from django.http import HttpResponse
 from .models import Account, Transaction
 
-def home_page(request):
+def home(request):
     return render(request, 'InfinityFinance/homepage.html')
 
-def page_not_found(request, exception):
-    return render(request, '404.html', status=404)
+def error_404(request, exception):
+    return render(request, 'InfinityFinance/404.html', status=404)
 
 def account(request):
     # Your logic for account view
