@@ -45,7 +45,16 @@ def deposit(request):
     
 def withdraw(request):
     # Your logic for withdraw view
-    return render(request, 'bank/withdraw.html')
+    if request.method == 'POST':
+        # Process withdrawal form submission
+        # Validate withdrawal details
+        # Deduct withdrawal amount from user's account
+        # Create transaction record for the withdrawal
+        return redirect('account')  # Redirect to account page after successful withdrawal
+    else:
+        # Display withdrawal form
+        return render(request, 'bank/withdraw.html')
+    
 
 class CustomLoginView(LoginView):
     template_name = 'bank/login.html'
