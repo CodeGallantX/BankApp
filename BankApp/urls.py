@@ -1,19 +1,18 @@
 from django.contrib import admin
 from django.urls import path
-from InfinityFinance.views import home_page, account_details
+from InfinityFinance import views as infinity_views  # Import the views from InfinityFinance app
 
 app_name = 'bank'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_page, name='home'),
-    path('account/', InfinityFinance.views.account, name='account'),
-    path('transfer/', InfinityFinance.views.transfer, name='transfer'),
-    path('deposit/', InfinityFinance.views.deposit, name='deposit'),
-    path('withdraw/', InfinityFinance.views.withdraw, name='withdraw'),
-    path('register/', InfinityFinance.views.signup, name="signup"),
-    path('account/<int:account_id>/', InfinityFinance.views.account_details, name="account_details"),
+    path('', infinity_views.home_page, name='home'),  # Use infinity_views to access the views
+    path('account/', infinity_views.account, name='account'),
+    path('transfer/', infinity_views.transfer, name='transfer'),
+    path('deposit/', infinity_views.deposit, name='deposit'),
+    path('withdraw/', infinity_views.withdraw, name='withdraw'),
+    path('register/', infinity_views.signup, name="signup"),
+    path('account/<int:account_id>/', infinity_views.account_details, name="account_details"),
 ]
-
 
 handler404 = 'InfinityFinance.views.page_not_found'
