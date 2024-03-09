@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
-from InfinityFinance import views as infinity_views  # Import the views from InfinityFinance app
+from . import views
 
 
 urlpatterns = [
-    path('', include('pages.urls')),
+    path('', include('InfinityFinance.urls')),
     path('admin/', admin.site.urls),
     path('', infinity_views.home_page, name=''),  # Use infinity_views to access the views
     path('account/', infinity_views.account, name='account'),
