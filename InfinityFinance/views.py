@@ -11,6 +11,7 @@ from .views import account_details
 
 def home_page(request):
     return render(request, 'bank/homepage.html')
+    pass
 
 
 def page_not_found(request):
@@ -20,6 +21,7 @@ def page_not_found(request):
 def account_details(request, account_id):
     account = get_object_or_404(Account, id=account_id)
     return render(request, 'bank/account.html', {'account': account})
+    pass
 
 
 class CustomLoginView(LoginView):
