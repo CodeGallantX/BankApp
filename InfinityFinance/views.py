@@ -3,7 +3,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
 from django.views import generic
 from django.urls import reverse_lazy
-from .models import Account
+from .models import Account, Transaction
 
 def home_page(request):
     return render(request, 'bank/homepage.html')
@@ -13,12 +13,24 @@ def page_not_found(request):
 
 def account(request):
     # Your logic for account view
+    user = request.user
+    account = user.account  # Assuming user has a one-to-one relationship with Account model
+    transactions = Transaction.objects.filter(account=account)
     return render(request, 'bank/account.html')
 
 def transfer(request):
     # Your logic for transfer view
-    return render(request, 'bank/transfer.html')
-
+    if request.method == 'POST':
+        # Process transfer form submission
+        # Validate transfer details
+        # Deduct transfer amount from sender's account
+        # Add transfer amount to recipient's account
+        # Create transaction records for both accounts
+        return redirect('account')  # Redirect to account page after successful transfer
+    else:
+        # Display transfer form
+        return render(request, 'bank/transfer.html')
+    
 def deposit(request):
     # Your logic for deposit view
     return render(request, 'bank/deposit.html')
