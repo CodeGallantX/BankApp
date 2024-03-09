@@ -3,7 +3,6 @@ from django.urls import path
 from InfinityFinance import views as infinity_views  # Import the views from InfinityFinance app
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', infinity_views.home_page, name='home'),  # Use infinity_views to access the views
