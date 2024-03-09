@@ -5,7 +5,7 @@ from InfinityFinance import views as infinity_views  # Import the views from Inf
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', infinity_views.home_page, name='home'),  # Use infinity_views to access the views
+    path('', infinity_views.home_page, name=''),  # Use infinity_views to access the views
     path('account/', infinity_views.account, name='account'),
     path('transfer/', infinity_views.transfer, name='transfer'),
     path('deposit/', infinity_views.deposit, name='deposit'),

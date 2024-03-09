@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from .models import Account, Transaction
 
 def home_page(request):
-    return render(request, 'bank/homepage.html')
+    return render(request, 'InfinityFinance/homepage.html')
 
 def page_not_found(request, exception=None):
     return render(request, '404.html', status=404)
