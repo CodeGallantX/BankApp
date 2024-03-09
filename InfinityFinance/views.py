@@ -8,7 +8,7 @@ from .models import Account, Transaction
 def home_page(request):
     return render(request, 'InfinityFinance/homepage.html')
 
-def page_not_found(request, exception=None):
+def page_not_found(request, exception):
     return render(request, '404.html', status=404)
 
 def account(request):

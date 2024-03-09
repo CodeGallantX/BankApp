@@ -15,3 +15,4 @@ urlpatterns = [
 ]
 
 handler404 = 'InfinityFinance.views.page_not_found'
+
