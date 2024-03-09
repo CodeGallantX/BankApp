@@ -33,8 +33,16 @@ def transfer(request):
     
 def deposit(request):
     # Your logic for deposit view
-    return render(request, 'bank/deposit.html')
-
+    if request.method == 'POST':
+        # Process deposit form submission
+        # Validate deposit details
+        # Add deposit amount to user's account
+        # Create transaction record for the deposit
+        return redirect('account')  # Redirect to account page after successful deposit
+    else:
+        # Display deposit form
+        return render(request, 'bank/deposit.html')
+    
 def withdraw(request):
     # Your logic for withdraw view
     return render(request, 'bank/withdraw.html')
