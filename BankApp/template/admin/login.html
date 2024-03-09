@@ -6,6 +6,18 @@
     <title>Authentication</title>
 </head>
 <body>
-    
+    {% extends 'admin/login.html' %}
+
+{% block content %}
+<div class="login-form">
+    <h2>Welcome to My Custom Admin Login Page</h2>
+    <form method="post" action="{% url 'admin:login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+</div>
+{% endblock %}
+
 </body>
 </html>
