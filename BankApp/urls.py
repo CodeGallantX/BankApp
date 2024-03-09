@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from InfinityFinance import views as infinity_views  # Import the views from InfinityFinance app
 
-app_name = 'bank'
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
