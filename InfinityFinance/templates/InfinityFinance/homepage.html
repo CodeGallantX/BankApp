@@ -19,13 +19,13 @@
     <!--CSS-->
     <style>
         :root {
-            --color-primary: #4fbdce;
+            --color-primary: linear-gradient(top left, #4fbdce);
             --color-secondary: #ffcb03;
             --color-tertiary: #ff585f;
             --color-primary-darker: #4fadce;
             --color-secondary-darker: #ffbb00;
             --color-tertiary-darker: #fd424b;
-            --color-primary-opacity: #5ec5763a;
+            --color-primary-opacity: #4fadce3a;
             --color-secondary-opacity: #ffcd0331;
             --color-tertiary-opacity: #ff58602d;
             --gradient-primary: linear-gradient(to top left, #4fadce, #4fbdce);
@@ -549,11 +549,13 @@
           
           /* SIGNUP */
           .section--sign-up {
-            background-color: #37383d;
+            background: linear-gradient(45deg, #00040f, #444);
             border-top: none;
             /* border-bottom: 1px solid #444;  */ /*add/remove bottom line. */
             text-align: center;
-            padding: 10rem 3rem;
+            padding: 8rem 2rem;
+            border-radius: 50px;
+            margin: 0 100px;
           }
           
           .section--sign-up .section__header {
@@ -572,8 +574,7 @@
           
           /* FOOTER */
           .footer {
-            padding: 10rem 3rem;
-            background-color: #37383d;
+            padding: 10rem 3rem;      
           }
           
           .footer__nav {
